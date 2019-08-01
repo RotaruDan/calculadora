@@ -21,6 +21,7 @@ Abrir una consola y ejecutar:
 ```
 git clone https://github.com/RotaruDan/calculadora
 cd calculadora
+mvn validate
 mvn verify
 mvn clean install
 ```
