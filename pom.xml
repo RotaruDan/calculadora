@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.iteriam</groupId>
+    <artifactId>calculadora</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.targetEncoding>UTF-8</project.build.targetEncoding>
+    </properties>
+
+
+    <issueManagement>
+        <url>https://github.com/RotaruDan/calculadora/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/RotaruDan/calculadora</url>
+        <connection>scm:git:git://github.com/RotaruDan/calculadora.git</connection>
+    </scm>
+
+
+    <developers>
+        <developer>
+            <id>RotaruDan</id>
+            <name>Dan Cristian Rotaru</name>
+        </developer>
+    </developers>
+
+
+
+    <dependencies>
+
+        <!-- mvc -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.1.6.RELEASE</version>
+        </dependency>
+
+        <!-- dependencia generada por el plugin maven-install plugin de abajo-->
+        <dependency>
+            <groupId>com.iteriam</groupId>
+            <artifactId>tracer</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- usado para hacer tests -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>2.1.6.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>calculadora</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <groupId>com.iteriam</groupId>
+                    <artifactId>tracer</artifactId>
+                    <version>1.0.0</version>
+                    <packaging>jar</packaging>
+                    <file>${basedir}/lib/tracer-1.0.0.jar</file>
+                    <generatePom>true</generatePom>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>install-jar-lib</id>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <phase>validate</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.1.6.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>spring-boot</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
