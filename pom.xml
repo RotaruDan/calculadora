@@ -109,6 +109,17 @@
                 </executions>
             </plugin>
 
+            <!-- Cobertura Maven plugin para el pom.xml -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <format>xml</format>
+                    <maxmem>512m</maxmem>
+                </configuration>
+            </plugin>
+
             <!-- Configurar el plugin de Coveralls para mostrar cobertura de tests pom.xml -->
             <plugin>
                 <groupId>org.eluder.coveralls</groupId>
