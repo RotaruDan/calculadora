@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/e-ucm/rage-analytics-realtime.svg?branch=master)](https://travis-ci.org/e-ucm/rage-analytics-realtime) [![Coverage Status](https://coveralls.io/repos/github/RotaruDan/calculadora/badge.svg?branch=master)](https://coveralls.io/github/RotaruDan/calculadora?branch=master)
+
 # Calculadora Spring-Boot
 Calculadora como micro-servicio (API) utilizando Spring-boot y Maven con funcionalidades básicas de sumar, restar, multiplicar y dividir.
 Leer el [enunciado](https://github.com/RotaruDan/calculadora/blob/master/enunciado.md) para más información.
