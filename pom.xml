@@ -108,6 +108,18 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Configurar el plugin de Coveralls para mostrar cobertura de tests pom.xml -->
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>4.3.0</version>
+                <configuration>
+                    <scanForSources>true</scanForSources>
+                    <sourceEncoding>UTF-8</sourceEncoding>
+                    <serviceName>travis-ci</serviceName>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

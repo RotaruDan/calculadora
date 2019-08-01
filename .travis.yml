@@ -1,0 +1,5 @@
+language: java
+before_install:
+  - mvn validate
+after_success:
+  - mvn -DrepoToken=$COVERALLS_REPO_TOKEN cobertura:cobertura coveralls:report
